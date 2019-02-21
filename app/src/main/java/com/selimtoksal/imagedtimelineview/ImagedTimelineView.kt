@@ -15,6 +15,10 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.R.attr.right
+import android.R.attr.left
+
+
 
 class ImagedTimelineView
 constructor(context: Context, attrs: AttributeSet?) : LinearLayout(context, attrs) {
@@ -72,6 +76,12 @@ constructor(context: Context, attrs: AttributeSet?) : LinearLayout(context, attr
 
         val textLayout = LinearLayout(context)
         textLayout.orientation = LinearLayout.VERTICAL
+        val params = LinearLayout.LayoutParams(
+            LinearLayout.LayoutParams.WRAP_CONTENT,
+            LinearLayout.LayoutParams.WRAP_CONTENT
+        )
+        params.setMargins(32, 0, 0, 0)
+        textLayout.layoutParams = params
         this.addView(textLayout)
 
         val headerTextView = TextView(context)
