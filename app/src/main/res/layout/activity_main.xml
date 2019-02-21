@@ -14,7 +14,7 @@
            app:line_color="#840dc3"
            app:image="@drawable/ic_launcher_foreground"
            app:image_padding="10"
-           app:is_last_item="false"
+           app:is_first_item="true"
            android:layout_width="match_parent"
            android:layout_height="wrap_content"/>
 
@@ -25,6 +25,24 @@
            app:image="@drawable/ic_launcher_foreground"
            app:image_padding="10"
            app:is_last_item="false"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"/>
+
+   <com.selimtoksal.imagedtimelineview.ImagedTimelineView
+           app:header_text="header"
+           app:description_text="aciklamama"
+           app:line_color="#840dc3"
+           app:image="@drawable/ic_launcher_foreground"
+           app:image_padding="10"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"/>
+
+   <com.selimtoksal.imagedtimelineview.ImagedTimelineView
+           app:header_text="header"
+           app:description_text="aciklamama"
+           app:line_color="#840dc3"
+           app:image="@drawable/ic_launcher_foreground"
+           app:image_padding="10"
            android:layout_width="match_parent"
            android:layout_height="wrap_content"/>
 

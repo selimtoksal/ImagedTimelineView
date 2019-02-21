@@ -1,20 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="ImagedTimelineView" parent="">
-        <attr name="item_position">
-            <enum name="start" value="0"/>
-            <enum name="mid" value="1"/>
-            <enum name="end" value="2"/>
-        </attr>
-        <attr name="timeline_type">
-            <enum name="line" value="0"/>
-            <enum name="item" value="1"/>
-        </attr>
         <attr name="is_last_item" format="boolean"/>
         <attr name="image_padding" format="integer"/>
         <attr name="image" format="reference"/>
         <attr name="line_color" format="string"/>
         <attr name="header_text" format="string"/>
         <attr name="description_text" format="string"/>
+        <attr name="is_first_item" format="boolean"/>
     </declare-styleable>
 </resources>
