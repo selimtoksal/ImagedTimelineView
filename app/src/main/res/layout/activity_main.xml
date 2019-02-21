@@ -11,48 +11,52 @@
    <com.selimtoksal.imagedtimelineview.ImagedTimelineView
            app:header_text="1.başlık"
            app:description_text="açıklamöamamaçıklamöamam"
-           app:line_color="#840dc3"
            app:image="@drawable/ic_launcher_foreground"
            app:image_padding="10"
            app:is_first_item="true"
+           app:description_textColor="#5b5f62"
            android:layout_width="match_parent"
            android:layout_height="wrap_content"/>
 
    <com.selimtoksal.imagedtimelineview.ImagedTimelineView
            app:header_text="header"
            app:description_text="aciklamama"
-           app:line_color="#840dc3"
            app:image="@drawable/ic_launcher_foreground"
            app:image_padding="10"
            app:is_last_item="false"
+           app:line_width="1dp"
+           app:description_textColor="#5b5f62"
            android:layout_width="match_parent"
            android:layout_height="wrap_content"/>
 
    <com.selimtoksal.imagedtimelineview.ImagedTimelineView
            app:header_text="header"
            app:description_text="aciklamama"
-           app:line_color="#840dc3"
            app:image="@drawable/ic_launcher_foreground"
            app:image_padding="10"
+           app:line_width="1dp"
+           app:description_textColor="#5b5f62"
            android:layout_width="match_parent"
            android:layout_height="wrap_content"/>
 
    <com.selimtoksal.imagedtimelineview.ImagedTimelineView
            app:header_text="header"
            app:description_text="aciklamama"
-           app:line_color="#840dc3"
            app:image="@drawable/ic_launcher_foreground"
            app:image_padding="10"
+           app:line_width="1dp"
+           app:description_textColor="#5b5f62"
            android:layout_width="match_parent"
            android:layout_height="wrap_content"/>
 
    <com.selimtoksal.imagedtimelineview.ImagedTimelineView
            app:header_text="header"
            app:description_text="aciklamama"
-           app:line_color="#840dc3"
            app:image="@drawable/ic_launcher_foreground"
            app:image_padding="10"
            app:is_last_item="true"
+           app:description_textColor="#5b5f62"
+           app:line_width="1dp"
            android:layout_width="match_parent"
            android:layout_height="wrap_content"/>
 

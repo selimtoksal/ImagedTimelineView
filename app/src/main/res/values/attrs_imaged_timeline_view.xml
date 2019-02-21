@@ -5,10 +5,11 @@
         <attr name="is_last_item" format="boolean"/>
         <attr name="image_padding" format="integer"/>
         <attr name="image" format="reference"/>
-        <attr name="line_width" format="integer"/>
-        <attr name="line_color" format="string"/>
+        <attr name="line_width" format="dimension"/>
+        <attr name="line_color" format="color"/>
         <attr name="header_text" format="string"/>
+        <attr name="header_textColor" format="color"/>
+        <attr name="description_textColor" format="color"/>
         <attr name="description_text" format="string"/>
-
     </declare-styleable>
 </resources>

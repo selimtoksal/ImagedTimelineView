@@ -5,6 +5,7 @@ import android.content.res.TypedArray
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
+import android.graphics.Typeface
 import android.graphics.drawable.Drawable
 import android.support.annotation.DrawableRes
 import android.support.v4.content.ContextCompat
@@ -20,11 +21,13 @@ constructor(context: Context, attrs: AttributeSet?) : LinearLayout(context, attr
 
     private val paint: Paint = Paint()
     private var lineColor: Int = -1
-    private var lineWidth: Int = 1
+    private var lineWidth: Float = 0F
     @DrawableRes
     var image: Drawable? = null
     private var headerText: String? = null
+    private var headerTextColor: Int = -1
     private var descriptionText: String? = null
+    private var descriptionTextColor: Int = -1
     private var imagePadding: Int? = null
     private var isLastItem: Boolean = false
     private var isFirstItem: Boolean = false
@@ -45,8 +48,10 @@ constructor(context: Context, attrs: AttributeSet?) : LinearLayout(context, attr
 
     private fun initAttrs(typedArray: TypedArray) {
 
-        this.lineColor = Color.parseColor(typedArray.getString(R.styleable.ImagedTimelineView_line_color))
-        this.lineWidth = typedArray.getInt(R.styleable.ImagedTimelineView_line_width, 12)
+        this.lineColor = typedArray.getColor(R.styleable.ImagedTimelineView_line_color, Color.BLACK)
+        this.headerTextColor = typedArray.getColor(R.styleable.ImagedTimelineView_header_textColor, Color.BLACK)
+        this.descriptionTextColor = typedArray.getColor(R.styleable.ImagedTimelineView_description_textColor, Color.BLACK)
+        this.lineWidth = typedArray.getDimension(R.styleable.ImagedTimelineView_line_width, 12F)
         val imageDrawableId = typedArray.getResourceId(R.styleable.ImagedTimelineView_image, -1)
         this.image = ContextCompat.getDrawable(context, imageDrawableId)
         this.headerText = typedArray.getString(R.styleable.ImagedTimelineView_header_text)
@@ -70,10 +75,15 @@ constructor(context: Context, attrs: AttributeSet?) : LinearLayout(context, attr
         this.addView(textLayout)
 
         val headerTextView = TextView(context)
+        headerTextView.setTypeface(null, Typeface.BOLD)
+        headerTextView.textSize = 17F
+        headerTextView.setTextColor(this.headerTextColor)
         headerTextView.text = this.headerText
         textLayout.addView(headerTextView)
 
         val descriptionTextView = TextView(context)
+        descriptionTextView.textSize = 13F
+        descriptionTextView.setTextColor(this.descriptionTextColor)
         descriptionTextView.text = this.descriptionText
         textLayout.addView(descriptionTextView)
 
@@ -84,7 +94,7 @@ constructor(context: Context, attrs: AttributeSet?) : LinearLayout(context, attr
 
         val p = Paint(Paint.ANTI_ALIAS_FLAG)
         p.color = this.lineColor
-        p.strokeWidth = this.lineWidth.toFloat()
+        p.strokeWidth = this.lineWidth
         val stopY = this.height
         val startX = this.imageView.width / 2
         val stopX = this.imageView.width / 2
