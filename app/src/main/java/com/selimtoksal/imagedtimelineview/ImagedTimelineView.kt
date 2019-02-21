@@ -19,7 +19,8 @@ class ImagedTimelineView
 constructor(context: Context, attrs: AttributeSet?) : LinearLayout(context, attrs) {
 
     private val paint: Paint = Paint()
-    private var lineColor: Int? = null
+    private var lineColor: Int = -1
+    private var lineWidth: Int = 1
     @DrawableRes
     var image: Drawable? = null
     private var headerText: String? = null
@@ -43,7 +44,9 @@ constructor(context: Context, attrs: AttributeSet?) : LinearLayout(context, attr
     }
 
     private fun initAttrs(typedArray: TypedArray) {
+
         this.lineColor = Color.parseColor(typedArray.getString(R.styleable.ImagedTimelineView_line_color))
+        this.lineWidth = typedArray.getInt(R.styleable.ImagedTimelineView_line_width, 12)
         val imageDrawableId = typedArray.getResourceId(R.styleable.ImagedTimelineView_image, -1)
         this.image = ContextCompat.getDrawable(context, imageDrawableId)
         this.headerText = typedArray.getString(R.styleable.ImagedTimelineView_header_text)
@@ -80,6 +83,8 @@ constructor(context: Context, attrs: AttributeSet?) : LinearLayout(context, attr
         super.onDraw(canvas)
 
         val p = Paint(Paint.ANTI_ALIAS_FLAG)
+        p.color = this.lineColor
+        p.strokeWidth = this.lineWidth.toFloat()
         val stopY = this.height
         val startX = this.imageView.width / 2
         val stopX = this.imageView.width / 2

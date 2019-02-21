@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="ImagedTimelineView" parent="">
+        <attr name="is_first_item" format="boolean"/>
         <attr name="is_last_item" format="boolean"/>
         <attr name="image_padding" format="integer"/>
         <attr name="image" format="reference"/>
+        <attr name="line_width" format="integer"/>
         <attr name="line_color" format="string"/>
         <attr name="header_text" format="string"/>
         <attr name="description_text" format="string"/>
-        <attr name="is_first_item" format="boolean"/>
+
     </declare-styleable>
 </resources>
